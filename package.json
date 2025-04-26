@@ -1,0 +1,63 @@
+{
+  "name": "decentrabrowse",
+  "version": "1.0.0",
+  "description": "A privacy-focused blockchain browser",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "webpack --config webpack.main.config.js && webpack --config webpack.renderer.config.js && webpack --config webpack.preload.config.js",
+    "dev": "concurrently \"npm run build:watch\" \"electron .\"",
+    "build:watch": "webpack --config webpack.main.config.js --watch & webpack --config webpack.renderer.config.js --watch & webpack --config webpack.preload.config.js --watch",
+    "copy-files": "mkdir -p dist/renderer && cp -r src/renderer/index.html dist/renderer/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
+    "electron": "^28.2.3",
+    "ethers": "^6.13.5",
+    "https-browserify": "^1.0.0",
+    "ipfs-http-client": "^56.0.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.3",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "assert": "^2.1.0",
+    "babel-loader": "^10.0.0",
+    "buffer": "^6.0.3",
+    "chai": "^4.3.10",
+    "concurrently": "^8.2.2",
+    "crypto-browserify": "^3.12.1",
+    "css-loader": "^6.10.0",
+    "hardhat": "^2.20.1",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
