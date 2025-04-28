@@ -47,7 +47,12 @@ npx hardhat node
 npx hardhat run scripts/deploy.ts --network localhost
 ```
 
-4. Start the Electron application:
+4. Copy necessary files to the dist directory:
+```bash
+npm run copy-files
+```
+
+5. Start the Electron application:
 ```bash
 npm run dev
 ```
@@ -88,5 +93,3 @@ If you encounter IPFS-related errors:
    ```
 
 ## License
-
-[Add your license here] 
